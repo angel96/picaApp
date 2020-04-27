@@ -13,7 +13,7 @@ exports.create = (req, res) => {
     //Crear un vehiculo
     const vehiculo = new Vehiculo({
         propietario: req.body.propietario || "Sin propietario",
-        tipo: req.body.tipo || "Sin tipo",
+        tipo: req.body.tipo || "NO TIPO",
         cargaMaxima: req.body.cargaMaxima || "Sin carga máxima",
         matricula: req.body.matricula
     });
@@ -23,7 +23,7 @@ exports.create = (req, res) => {
         res.send(data);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Algún error ha ocurrido creando la nota."
+            message: err.message || "Algún error ha ocurrido creando el vehiculo."
         });
     });
 
