@@ -3,4 +3,7 @@ module.exports = (app) => {
 
     // Create a new vehiculo
     app.post('/tipoVehiculo', tipoVehiculos.create);
+
+    // Retrieve a single vehiculo with vehiculoId
+    app.get('/tipoVehiculo/:tipoVehiculoId', tipoVehiculos.findOne);
 }

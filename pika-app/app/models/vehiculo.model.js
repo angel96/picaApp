@@ -1,18 +1,17 @@
 const mongoose = require('mongoose');
 var uniqueValidator = require('mongoose-unique-validator');
+var TipoVehiculo = require('../models/tipoVehiculo.model.js');
+mongoose.model('TipoVehiculo');
 
-const Tipos = Object.freeze({
-    Coche: 'COCHE',
-    Bicicleta: 'BICICLETA',
-    Patinete: 'PATINETE',
-  });
+require('./tipoVehiculo.model');
+require('../routes/tipoVehiculo.routes');
 
 //Crea el esquema de la clase
 const VehiculoSchema = mongoose.Schema({
     propietario: String,
     tipo: { 
-        type: String,
-        enum: Object.values(Tipos),
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'TipoVehiculo'
      },
     cargaMaxima: String,
     matricula: { 

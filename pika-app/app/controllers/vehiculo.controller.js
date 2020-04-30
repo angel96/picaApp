@@ -1,5 +1,7 @@
 const Vehiculo = require('../models/vehiculo.model.js');
 
+const TipoVehiculo = require('../models/tipoVehiculo.model.js');
+
 // Create and Save a new Vehiculo
 exports.create = (req, res) => {
 
@@ -54,7 +56,57 @@ exports.findOne = (req, res) => {
                 message: "Vehículo con id " + req.params.vehiculoId + " no encontrado."
             })
         }
+        //....................................
+        var tipVeh = vehiculo.tipo;
+        console.log("id tipo " + tipVeh);
+        
+        
+        //Aqui uso el findOne para pillar el nombre del tipo
+
+        TipoVehiculo.findById(tipVeh).then(tipoVehiculo => {
+            if(!tipoVehiculo) {
+                //Si no te llega devuelve un 404 de vehiculo no encontrado
+                return res.status(404).send({
+                    message: "Tipo de Vehículo con id " + req.params.tipoVehiculoId + " no encontrado."
+                })
+            }
+            //Aqui se obtiene el nombre que queremos
+            var nombre = tipoVehiculo.nombreTipo;
+            //
+        }).catch(error => {
+            if(error.kind === 'ObjectId') {
+                res.status(404).send({
+                    message: "Tipo de Vehículo con id " + req.params.vehiculoId + " no encontrado."
+                })
+            }
+            //Si no le llega el id
+            return res.status(500).send({
+                message: "Error recibiendo el tipo del vehículo con la id " + req.params.vehiculoId
+            })
+        })
+
+        //.....................................
+
+        // console.log("este " + nombre);
+
+        // var JSONModificado = {
+        //     "_id":vehiculo.id,
+        //     "propietario":vehiculo.propietario,
+        //     "tipo":nombre,
+        //     "cargaMaxima":"22KW","matricula":vehiculo.cargaMaxima,
+        //     "createdAt":vehiculo.createdAt,
+        //     "updatedAt":vehiculo.updatedAt,
+        //     "__v":0
+        // }
+
+        // console.log("nuevo json " + JSONModificado);
+
+        // var nuevoVehiculo = JSON.parse(JSONModificado);
+
+        // console.log("nuevo json " + JSON.stringify(nuevoVehiculo));
+
         res.send(vehiculo);
+
     }).catch(error => {
         if(error.kind === 'ObjectId') {
             res.status(404).send({
