@@ -40,3 +40,4 @@ app.listen(3000, () => {
 require('./app/routes/vehiculo.routes.js')(app);
 require('./app/routes/tipoVehiculo.routes.js')(app);
 require('./app/routes/local.routes.js')(app);
+require('./app/routes/user.routes.js')(app);

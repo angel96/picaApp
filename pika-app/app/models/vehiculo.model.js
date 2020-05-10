@@ -19,7 +19,8 @@ const VehiculoSchema = mongoose.Schema({
     }
 //Añade automaticamente createdAt u UpdatedAt
 }, {
-    timestamps: true
+    timestamps: true,
+    autoCreate: true
 });
 
 VehiculoSchema.plugin(uniqueValidator);
