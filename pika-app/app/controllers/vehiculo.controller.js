@@ -1,6 +1,9 @@
 const Vehiculo = require('../models/vehiculo.model.js');
 
 const TipoVehiculo = require('../models/tipoVehiculo.model.js');
+const User = require('../models/user.model.js');
+
+var ObjectId = require('mongodb').ObjectID;
 
 // Create and Save a new Vehiculo
 exports.create = (req, res) => {
@@ -14,8 +17,8 @@ exports.create = (req, res) => {
 
     //Crear un vehiculo
     const vehiculo = new Vehiculo({
-        propietario: req.body.propietario || "Sin propietario",
-        tipo: req.body.tipo || "NO TIPO",
+        propietario: ObjectId(req.body.propietario),
+        tipo: req.body.tipo,
         cargaMaxima: req.body.cargaMaxima || "Sin carga máxima",
         matricula: req.body.matricula
     });
@@ -50,13 +53,28 @@ exports.findOne = (req, res) => {
 
     //Encuentra el vehiculo por el id
     Vehiculo.findById(req.params.vehiculoId).then(vehiculo => {
+        
         if(!vehiculo) {
             //Si no te llega devuelve un 404 de vehiculo no encontrado
             return res.status(404).send({
                 message: "Vehículo con id " + req.params.vehiculoId + " no encontrado."
             })
         }
-        res.send(vehiculo);
+        
+        var json = {
+            cargaMaxima: vehiculo.cargaMaxima,
+            matricula: vehiculo.matricula
+        };
+
+        TipoVehiculo.findOne(vehiculo.tipo).then(tipo => {
+            json["type"]=tipo.nombreTipo;
+        });
+
+        User.findOne(vehiculo.propietario).then(user=> {
+            json["propietario"]=user.name;
+            res.send(json);
+        });
+
     }).catch(error => {
         if(error.kind === 'ObjectId') {
             res.status(404).send({
@@ -83,8 +101,8 @@ exports.update = (req, res) => {
 
     //Actualiza el vehiculo
     Vehiculo.findByIdAndUpdate(req.params.vehiculoId, {
-        propietario: req.body.propietario || "Sin propietario",
-        tipo: req.body.tipo || "NO TIPO",
+        propietario: req.body.propietario,
+        tipo: req.body.tipo,
         cargaMaxima: req.body.cargaMaxima || "Sin carga máxima",
         matricula: req.body.matricula
     }, {new: true}).then(vehiculo => {
@@ -126,76 +144,5 @@ exports.delete = (req, res) => {
             message: "vehículo no encontrado con el id " + req.params.vehiculoId
         });
     });
-
-};
-
-exports.findOneWithNameTipo = (req, res) => {
-
-    //Encuentra el vehiculo por el id
-    Vehiculo.findById(req.params.vehiculoId).then(vehiculo => {
-        if(!vehiculo) {
-            //Si no te llega devuelve un 404 de vehiculo no encontrado
-            return res.status(404).send({
-                message: "Vehículo con id " + req.params.vehiculoId + " no encontrado."
-            })
-        }
-    }).catch(error => {
-        if(error.kind === 'ObjectId') {
-            res.status(404).send({
-                message: "Vehículo con id " + req.params.vehiculoId + " no encontrado."
-            })
-        }
-        //Si no le llega el id
-        return res.status(500).send({
-            message: "Error recibiendo el vehículo con la id " + req.params.vehiculoId
-        })
-    })
-
-    var tipVeh = vehiculo.tipo;
-    console.log("id tipo " + tipVeh);
-
-    //Aqui uso el findOne para pillar el nombre del tipo
-
-    TipoVehiculo.findById(tipVeh).then(tipoVehiculo => {
-        if(!tipoVehiculo) {
-            //Si no te llega devuelve un 404 de vehiculo no encontrado
-            return res.status(404).send({
-                message: "Tipo de Vehículo con id " + req.params.tipoVehiculoId + " no encontrado."
-            })
-        }
-        //Aqui se obtiene el nombre que queremos
-        var nombre = tipoVehiculo.nombreTipo;
-        //
-    }).catch(error => {
-        if(error.kind === 'ObjectId') {
-            res.status(404).send({
-                message: "Tipo de Vehículo con id " + req.params.vehiculoId + " no encontrado."
-            })
-        }
-        //Si no le llega el id
-        return res.status(500).send({
-            message: "Error recibiendo el tipo del vehículo con la id " + req.params.vehiculoId
-        })
-    })
-
-    console.log("este " + nombre);
-
-    var JSONModificado = {
-        "_id":vehiculo.id,
-        "propietario":vehiculo.propietario,
-        "tipo":nombre,
-        "cargaMaxima":"22KW","matricula":vehiculo.cargaMaxima,
-        "createdAt":vehiculo.createdAt,
-        "updatedAt":vehiculo.updatedAt,
-        "__v":0
-    }
-
-    console.log("nuevo json " + JSONModificado);
-
-    var nuevoVehiculo = JSON.parse(JSONModificado);
-
-    console.log("nuevo json " + JSON.stringify(nuevoVehiculo));
-
-    res.send(vehiculo);
 
 };

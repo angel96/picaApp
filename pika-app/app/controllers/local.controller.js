@@ -19,7 +19,7 @@ exports.create = (req, res) => {
 
     //Crear un local
     const local = new Local({
-        propietario: req.body.propietario || "Sin propietario",
+        propietario: req.body.propietario,
         direccion: req.body.direccion,
         numMaxVehiculo: req.body.numMaxVehiculo || "No hay datos",
         disponible: req.body.disponible
@@ -95,7 +95,7 @@ exports.update = (req, res) => {
 
     //Actualiza el local
     Local.findByIdAndUpdate(req.params.localId, {
-        propietario: req.body.propietario || "Sin propietario",
+        propietario: req.body.propietario,
         direccion: req.body.direccion,
         numMaxVehiculo: req.body.numMaxVehiculo || "No hay datos",
         disponible: req.body.disponible

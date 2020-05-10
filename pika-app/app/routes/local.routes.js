@@ -1,18 +1,18 @@
-module.exports = (app) => {
+module.exports = (app, middleware) => {
     const local = require('../controllers/local.controller.js');
 
     // Create a new local
-    app.post('/local', local.create);
+    app.post('/local',middleware, local.create);
 
     // Retrieve all local
-    app.get('/local', local.findAll);
+    app.get('/local',middleware, local.findAll);
 
     // Retrieve a single local with localId
-    app.get('/local/:localId', local.findOne);
+    app.get('/local/:localId',middleware,local.findOne);
 
     // Update a local with localId
-    app.put('/local/:localId', local.update);
+    app.put('/local/:localId',middleware,local.update);
 
     // Delete a local with localId
-    app.delete('/local/:localId', local.delete);
+    app.delete('/local/:localId',middleware,local.delete);
 }

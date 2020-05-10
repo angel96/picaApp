@@ -36,7 +36,15 @@ app.listen(3000, () => {
     console.log("Server is listening on port 3000");
 });
 
-// Require Vehiculos routes
-require('./app/routes/vehiculo.routes.js')(app);
-require('./app/routes/tipoVehiculo.routes.js')(app);
-require('./app/routes/local.routes.js')(app);
+//Creates JWT control
+const jwtKey = require('./config/jwt.config.js');
+app.set('keygen', jwtKey.llave);
+
+const middleware = require('./middleware.js');
+
+// Require for routes
+require('./app/routes/vehiculo.routes.js')(app, middleware);
+require('./app/routes/tipoVehiculo.routes.js')(app, middleware);
+require('./app/routes/local.routes.js')(app, middleware);
+require('./app/routes/user.routes.js')(app, middleware);
+require('./app/routes/authentication.routes.js')(app);
