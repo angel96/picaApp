@@ -8,7 +8,10 @@ require('../routes/tipoVehiculo.routes');
 
 //Crea el esquema de la clase
 const VehiculoSchema = mongoose.Schema({
-    propietario: String,
+    propietario: { 
+        type: mongoose.Schema.Types.ObjectId,
+        refPath: 'User.__t'
+    },
     tipo: { 
         type: mongoose.Schema.Types.ObjectId,
         ref: 'TipoVehiculo'

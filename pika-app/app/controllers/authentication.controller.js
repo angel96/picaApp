@@ -8,7 +8,7 @@ exports.authenticate = (req, res) => {
 
         UserAccount.find({username: user, password:pass}).then(data => {
             
-               const payload = {check:  true};
+               const payload = {username: user, check:  true};
               
                const token = jwt.sign(payload, req.app.get('keygen'), {
                 expiresIn: 1000000000
@@ -23,5 +23,4 @@ exports.authenticate = (req, res) => {
             res.sendStatus(403);
         });
     
-
 };

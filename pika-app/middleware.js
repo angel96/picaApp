@@ -7,7 +7,6 @@ module.exports = function middleware(req, res, next) {
 
       jwt.verify(token, req.app.get('keygen'), (err, decoded) => {
         if (err) {
-          console.log(err);
           return res.json({ mensaje: 'Invalid Token' });    
         } else {
           req.decoded = decoded;    
