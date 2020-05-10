@@ -18,7 +18,8 @@ function BaseSchema(add){
         location: String
         }, {
             timestamps: true,
-            autoCreate: true
+            autoCreate: true,
+            strict: false
         });
 
     if(add){
@@ -41,5 +42,5 @@ var usuarioVehiculo = new BaseSchema({creditCard:{type:String}});
 module.exports = User.discriminator('UsuarioVehiculo', usuarioVehiculo);
 
 
-var usuarioLocal = new BaseSchema({numeroLocal:{type:String}});
+var usuarioLocal = new BaseSchema({localNumber:{type:String}});
 module.exports = User.discriminator('UsuarioLocal', usuarioLocal);

@@ -3,30 +3,58 @@ const UserAccount = require('../models/userAccount.model.js');
 
 // Crear un usuario
 exports.create = (req, res) => {
+
+    var type = "";
+
+    if(req.body.creditCard){
+        type = "UsuarioVehiculo";
+    } else if (req.body.localNumber){
+        type = "UsuarioLocal";
+    }
+
     //Crear una cuenta de usuario
     const userAccount = new UserAccount({
         username: req.body.username,
         password: req.body.password
     });
 
-    //Crear un usuario 
-
+    //Crear un usuario
     userAccount.save().then(data => {
-        const user = new User({
-            userAccount: data,
-            name: req.body.name,
-            surnames: req.body.surnames,
-            location: req.body.location
-        });
 
-        user.save().then(data => {
-            res.sendStatus(200);
-        }).catch(err => {
-            res.status(500).send({
-                message: err.message || "Algún error ha ocurrido creando el usuario."
+        var mongoose = require('mongoose');
+        var UsuarioLocal = mongoose.model('UsuarioLocal');
+        var UsuarioVehiculo = mongoose.model('UsuarioVehiculo');
+        
+        var usuarioToSave = null;
+
+        if(type == "UsuarioLocal"){
+            usuarioToSave = new UsuarioLocal({
+                userAccount: data,
+                name: req.body.name,
+                surnames: req.body.surnames,
+                location: req.body.location,
+                localNumber:req.body.localNumber
             });
-        });
-
+        } else if(type=="UsuarioVehiculo") {
+            usuarioToSave = new UsuarioVehiculo({
+                userAccount: data,
+                name: req.body.name,
+                surnames: req.body.surnames,
+                location: req.body.location,
+                creditCard:req.body.creditCard
+            });
+        }
+        
+        if(usuarioToSave != null){
+            usuarioToSave.save().then(data => {
+                res.sendStatus(200);
+            }).catch(err => {
+                res.status(500).send({
+                    message: err.message || "Algún error ha ocurrido creando el usuario."
+                });
+            });
+        }
+       
     }).catch(err => {
         res.status(500).send({
             message: err.message || "Algún error ha ocurrido creando el usuario."
