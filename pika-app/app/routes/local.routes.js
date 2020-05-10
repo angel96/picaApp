@@ -14,5 +14,5 @@ module.exports = (app, middleware) => {
     app.put('/local/:localId',middleware,local.update);
 
     // Delete a local with localId
-    app.delete('/local/:localId',middlewarelocal.delete);
+    app.delete('/local/:localId',middleware,local.delete);
 }
