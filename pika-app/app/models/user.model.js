@@ -7,13 +7,8 @@ var Schema = mongoose.Schema;
 mongoose.model('UserAccount');
 require('./userAccount.model');
 
-function BaseSchema(){
-    Schema.apply(this,{
-        timestamps: true,
-        autoCreate: true
-    });
-
-    this.add({
+function BaseSchema(add){
+    var UserSchema = mongoose.Schema({
         userAccount: { 
             type: mongoose.Schema.Types.ObjectId,
             ref: 'UserAccount'
@@ -21,7 +16,16 @@ function BaseSchema(){
         name: String,
         surnames: String,
         location: String
-    });
+        }, {
+            timestamps: true,
+            autoCreate: true
+        });
+
+    if(add){
+        UserSchema.add(add);
+    }
+
+    return UserSchema;
 }
 
 util.inherits(BaseSchema, Schema);
@@ -31,9 +35,11 @@ var UserSchema = new BaseSchema();
 UserSchema.virtual('type').get(function () { return this.__t; });
 
 var User = mongoose.model('User', UserSchema);
+module.exports = User;
 
 var usuarioVehiculo = new BaseSchema({creditCard:{type:String}});
-User.discriminator('UsuarioVehiculo', usuarioVehiculo);
+module.exports = User.discriminator('UsuarioVehiculo', usuarioVehiculo);
+
 
 var usuarioLocal = new BaseSchema({numeroLocal:{type:String}});
-User.discriminator('UsuarioLocal', usuarioLocal);
+module.exports = User.discriminator('UsuarioLocal', usuarioLocal);
