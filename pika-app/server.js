@@ -47,4 +47,5 @@ require('./app/routes/vehiculo.routes.js')(app, middleware);
 require('./app/routes/tipoVehiculo.routes.js')(app, middleware);
 require('./app/routes/local.routes.js')(app, middleware);
 require('./app/routes/user.routes.js')(app, middleware);
+require('./app/routes/valoracion.routes.js')(app, middleware);
 require('./app/routes/authentication.routes.js')(app);
