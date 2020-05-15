@@ -46,17 +46,19 @@ exports.create = (req, res) => {
         
         if(usuarioToSave != null){
             usuarioToSave.save().then(data => {
-                res.sendStatus(data);
+                res.send(data);
             }).catch(err => {
+                console.log("1");
                 res.status(500).send({
-                    message: err.message || "Algún error ha ocurrido creando el usuario."
+                    message: err.message || "Algún error ha ocurrido creando el usuario. 1"
                 });
             });
         }
        
     }).catch(err => {
+        console.log("2");
         res.status(500).send({
-            message: err.message || "Algún error ha ocurrido creando el usuario."
+            message: err.message || "Algún error ha ocurrido creando el usuario. 2"
         });
     });
 };
