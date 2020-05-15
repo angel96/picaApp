@@ -5,8 +5,14 @@ module.exports = (app, middleware) => {
     app.post('/user', user.create);
 
     // Retrieve a single user with userId
-    app.get('/user/:userId',middleware, user.findOne);
+    app.get('/user/local/:userId',middleware, user.findOneLocal);
+
+    // Retrieve a single user with vehicle
+    app.get('/user/vehiculo/:userId',middleware, user.findOneVehicle);
 
     // Update a user with userId
-    app.put('/user/:userId',middleware,user.update);
+    app.put('/user/local/:userId',middleware,user.updateLocal);
+
+    // Update a user with userId
+    app.put('/user/vehiculo/:userId',middleware,user.updateVehiculo);
 }
