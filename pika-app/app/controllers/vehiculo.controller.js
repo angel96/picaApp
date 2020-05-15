@@ -99,13 +99,28 @@ exports.update = (req, res) => {
         });
     }
 
+
+    var vehic = null;
+
+    var check = Vehiculo.findOne(req.params.vehiculoId);
+
+    if(req.body.matricula != check.matricula){
+        vehic = Vehiculo.findOneAndUpdate(req.params.vehiculoId, {
+            propietario: ObjectId(req.body.propietario),
+            tipo: ObjectId(req.body.tipo),
+            cargaMaxima: req.body.cargaMaxima || "Sin carga máxima",
+            matricula: req.body.matricula
+        }, {new: true});
+    } else{
+        vehic = Vehiculo.findOneAndUpdate(req.params.vehiculoId, {
+            propietario: ObjectId(req.body.propietario),
+            tipo: ObjectId(req.body.tipo),
+            cargaMaxima: req.body.cargaMaxima || "Sin carga máxima"
+        }, {new: true});
+    }
+
     //Actualiza el vehiculo
-    Vehiculo.findByIdAndUpdate(req.params.vehiculoId, {
-        propietario: req.body.propietario,
-        tipo: req.body.tipo,
-        cargaMaxima: req.body.cargaMaxima || "Sin carga máxima",
-        matricula: req.body.matricula
-    }, {new: true}).then(vehiculo => {
+    vehic.then(vehiculo => {
         if(!vehiculo) {
             return res.status(404).send({
                 message: "vehículo no encontrado con el id " + req.params.vehiculoId

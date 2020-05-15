@@ -1,5 +1,8 @@
 const User = require('../models/user.model.js');
 const UserAccount = require('../models/userAccount.model.js');
+var mongoose = require('mongoose');
+var UsuarioLocal = mongoose.model('UsuarioLocal');
+var UsuarioVehiculo = mongoose.model('UsuarioVehiculo');
 
 // Crear un usuario
 exports.create = (req, res) => {
@@ -20,10 +23,6 @@ exports.create = (req, res) => {
 
     //Crear un usuario
     userAccount.save().then(data => {
-
-        var mongoose = require('mongoose');
-        var UsuarioLocal = mongoose.model('UsuarioLocal');
-        var UsuarioVehiculo = mongoose.model('UsuarioVehiculo');
         
         var usuarioToSave = null;
 
@@ -47,7 +46,7 @@ exports.create = (req, res) => {
         
         if(usuarioToSave != null){
             usuarioToSave.save().then(data => {
-                res.sendStatus(200);
+                res.sendStatus(data);
             }).catch(err => {
                 res.status(500).send({
                     message: err.message || "Algún error ha ocurrido creando el usuario."
@@ -62,11 +61,13 @@ exports.create = (req, res) => {
     });
 };
 
-exports.findOne = (req, res) => {
+exports.findOneLocal = (req, res) => {
     var userId = req.params.userId;
-
-    User.findById(userId).then(data => {
+    
+    UsuarioLocal.findById(userId).then(data => {
+        console.log(data);
         var account = UserAccount.findById(data.userAccount);
+        console.log(account);
         res.send({
             "username": account.username,
             "password": account.password,
@@ -87,13 +88,88 @@ exports.findOne = (req, res) => {
     });
 };
 
-exports.update = (req, res) => {
+exports.findOneVehicle = (req, res) => {
+    var userId = req.params.userId;
+    
+    UsuarioVehiculo.findById(userId).then(data => {
+        console.log(data);
+        var account = UserAccount.findById(data.userAccount);
+        console.log(account);
+        res.send({
+            "username": account.username,
+            "password": account.password,
+            "name": data.name,
+            "surnames": data.surnames,
+            "location": data.location,
+        });
+    }).catch(error => {
+        if (error.kind === 'ObjectId') {
+            res.status(404).send({
+                message: "Usuario con id " + userId + " no encontrado."
+            })
+        }
+        //Si no le llega el id
+        return res.status(500).send({
+            message: "Error recibiendo el usuario con la id " + userId
+        })
+    });
+};
+
+exports.updateLocal = (req, res) => {
 
     var userId = req.params.userId;
     
     var json = {};
 
-    User.findByIdAndUpdate(userId, {
+        UsuarioLocal.findByIdAndUpdate(userId, {
+            name: req.body.name,
+            surnames: req.body.surnames,
+            location: req.body.location
+        }, { new: true }).then(data => {
+            if (!data) {
+                return res.status(404).send({
+                    message: "Local no encontrado con el id " + userId
+                });
+            } else {
+    
+                var acc = UserAccount.findOne(data.userAccount);
+    
+                if(acc.username != req.body.username && acc.password != req.body.password){
+                    UserAccount.findByIdAndUpdate(data.userAccount, {
+                    
+                        username: req.body.username,
+                        password: req.body.password
+        
+                    }, { new: true }).then(accountMod=> {
+                        
+                        json = {
+                            "username": accountMod.username, "password": accountMod.password, 
+                            "name": data.name, "surnames": data.surnames, 
+                            "location": data.location
+                        };     
+                        res.send(json);
+                    });
+                }            
+                
+            }
+        }).catch(error => {
+            if (error.kind === 'ObjectId') {
+                return res.status(404).send({
+                    message: "Usuario no encontrado con el id " + userId
+                });
+            }
+            return res.status(500).send({
+                message: "Usuario no encontrado con el id " + userId
+            });
+        });
+};
+
+exports.updateVehiculo = (req, res) => {
+    var userId = req.params.userId;
+    
+    var json = {};
+
+    UsuarioVehiculo.findByIdAndUpdate(userId, {
         name: req.body.name,
         surnames: req.body.surnames,
         location: req.body.location
@@ -104,21 +180,24 @@ exports.update = (req, res) => {
             });
         } else {
 
-            UserAccount.findByIdAndUpdate(data.userAccount, {
-                
-                username: req.body.username,
-                password: req.body.password
+            var acc = UserAccount.findOne(data.userAccount);
 
-            }, { new: true }).then(accountMod=> {
+            if(acc.username != req.body.username && acc.password != req.body.password){
+                UserAccount.findByIdAndUpdate(data.userAccount, {
                 
-                json = {
-                    "username": accountMod.username, "password": accountMod.password, 
-                    "name": data.name, "surnames": data.surnames, 
-                    "location": data.location
-                };     
-                res.send(json);
-            });
-            
+                    username: req.body.username,
+                    password: req.body.password
+    
+                }, { new: true }).then(accountMod=> {
+                    
+                    json = {
+                        "username": accountMod.username, "password": accountMod.password, 
+                        "name": data.name, "surnames": data.surnames, 
+                        "location": data.location
+                    };     
+                    res.send(json);
+                });
+            }            
             
         }
     }).catch(error => {
