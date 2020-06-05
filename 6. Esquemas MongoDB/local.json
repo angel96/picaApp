@@ -1,0 +1,69 @@
+[{
+  "_id": {
+    "$oid": "5ebd2bd832ccf530ec1193ff"
+  },
+  "propietario": {
+    "$oid": "5ebd290e32ccf530ec1193f1"
+  },
+  "direccion": "Numero 12 de la calle Guia",
+  "numMaxVehiculo": 3,
+  "disponible": true,
+  "createdAt": {
+    "$date": "2020-05-14T11:30:32.972Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:30:32.972Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd2bf332ccf530ec119400"
+  },
+  "propietario": {
+    "$oid": "5ebd292532ccf530ec1193f3"
+  },
+  "direccion": "Numero 13 de la calle Guia",
+  "numMaxVehiculo": 1,
+  "disponible": false,
+  "createdAt": {
+    "$date": "2020-05-14T11:30:59.838Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:30:59.838Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd2c0e32ccf530ec119401"
+  },
+  "propietario": {
+    "$oid": "5ebd294b32ccf530ec1193f5"
+  },
+  "direccion": "Numero 1 de la calle Alto",
+  "numMaxVehiculo": 5,
+  "disponible": true,
+  "createdAt": {
+    "$date": "2020-05-14T11:31:26.757Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:31:26.757Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd2c2932ccf530ec119402"
+  },
+  "propietario": {
+    "$oid": "5ebd294b32ccf530ec1193f5"
+  },
+  "direccion": "Numero 2 de la calle Alto",
+  "numMaxVehiculo": 3,
+  "disponible": true,
+  "createdAt": {
+    "$date": "2020-05-14T11:31:53.925Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:32:25.539Z"
+  },
+  "__v": 0
+}]

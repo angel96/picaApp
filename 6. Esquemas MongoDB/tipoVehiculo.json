@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "5ebd29b032ccf530ec1193f6"
+  },
+  "nombreTipo": "COCHE ELECTRICO",
+  "createdAt": {
+    "$date": "2020-05-14T11:21:20.809Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:21:20.809Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd29c232ccf530ec1193f7"
+  },
+  "nombreTipo": "BICICLETA ELÉCTRICA",
+  "createdAt": {
+    "$date": "2020-05-14T11:21:38.204Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:21:38.204Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd29d132ccf530ec1193f8"
+  },
+  "nombreTipo": "PATINETE ELÉCTRICO",
+  "createdAt": {
+    "$date": "2020-05-14T11:21:53.485Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:21:53.485Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd29e132ccf530ec1193f9"
+  },
+  "nombreTipo": "MONOPATÍN",
+  "createdAt": {
+    "$date": "2020-05-14T11:22:09.379Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:22:39.754Z"
+  },
+  "__v": 0
+}]

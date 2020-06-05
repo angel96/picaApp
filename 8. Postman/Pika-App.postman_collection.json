@@ -1,0 +1,784 @@
+{
+	"info": {
+		"_postman_id": "ddbbf9ac-06b0-4be2-a46d-75e7e0fd2436",
+		"name": "Pika-App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registro de Usuario Local",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"CBD1920\",\r\n    \"password\":\"CBD1920\",\r\n    \"name\": \"CBD1920\",\r\n    \"surnames\": \"CBD1920\",\r\n    \"location\": \"CBD1920\",\r\n\t\"localNumber\":\"numeroLocal\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro de Usuario Vehiculo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"CBD1920-V\",\r\n    \"password\":\"CBD1920-V\",\r\n    \"name\": \"CBD1920-V\",\r\n    \"surnames\": \"CBD1920-V\",\r\n    \"location\": \"CBD1920-V\",\r\n\t\"localNumber\":\"numeroLocal-V\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inicio de Sesión - Uso del Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"CBD1920\",\"password\":\"CBD1920\"\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"CBD1920\",\r\n    \"password\":\"CBD1920\",\r\n    \"name\": \"CBD1920\",\r\n    \"surnames\": \"CBD1920\",\r\n    \"location\": \"CBD1920\",\r\n\t\"localNumber\":\"numeroLocal\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/local/5ebd292532ccf530ec1193f3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"local",
+						"5ebd292532ccf530ec1193f3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar registro de usuario local",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"CBD192013\",\r\n    \"password\":\"CBD192013\",\r\n    \"name\": \"CBD192013\",\r\n    \"surnames\": \"CBD192013\",\r\n    \"location\": \"CBD192013\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/local/5ebd290e32ccf530ec1193f1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"local",
+						"5ebd290e32ccf530ec1193f1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listado de vehiculos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"CBD1920\",\"password\":\"CBD1920\"\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/vehiculos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vehiculos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener vehiculo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"propietario\": \"5ebd27b032ccf530ec1193eb\",\r\n        \"tipo\": \"5ebd29b032ccf530ec1193f6\",\r\n        \"cargaMaxima\": \"99 w\",\r\n        \"matricula\": \"3333AD\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/vehiculos/5ebd2a9432ccf530ec1193fa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vehiculos",
+						"5ebd2a9432ccf530ec1193fa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear vehiculo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"propietario\": \"5ebd27b032ccf530ec1193eb\",\r\n        \"tipo\": \"5ebd29b032ccf530ec1193f6\",\r\n        \"cargaMaxima\": \"36 w\",\r\n        \"matricula\": \"3333AC\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/vehiculos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vehiculos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar vehiculo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"propietario\": \"5ebd27b032ccf530ec1193eb\",\r\n        \"tipo\": \"5ebd29b032ccf530ec1193f6\",\r\n        \"cargaMaxima\": \"99 w\",\r\n        \"matricula\": \"3333AD\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/vehiculos/5ebd2a9432ccf530ec1193fa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vehiculos",
+						"5ebd2a9432ccf530ec1193fa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar vehiculo",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"propietario\": \"5ebd27b032ccf530ec1193eb\",\r\n        \"tipo\": \"5ebd29b032ccf530ec1193f6\",\r\n        \"cargaMaxima\": \"99 w\",\r\n        \"matricula\": \"3333AD\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/vehiculos/5ebd2a9432ccf530ec1193fa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vehiculos",
+						"5ebd2a9432ccf530ec1193fa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listado de tipo vehiculos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"CBD1920\",\"password\":\"CBD1920\"\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tipoVehiculo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tipoVehiculo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear tipo de vehiculo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"nombreTipo\":\"Mi tipo de vehiculo\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tipoVehiculo/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tipoVehiculo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener tipo vehiculo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"nombreTipo\":\"RUEDA\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tipoVehiculo/5ebd29e132ccf530ec1193f9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tipoVehiculo",
+						"5ebd29e132ccf530ec1193f9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar tipo de vehiculo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"nombreTipo\":\"RUEDA\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tipoVehiculo/5ebd29e132ccf530ec1193f9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tipoVehiculo",
+						"5ebd29e132ccf530ec1193f9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar tipo de vehiculo",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"nombreTipo\":\"Mi tipo de vehiculo\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tipoVehiculo/5ebd29e132ccf530ec1193f9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tipoVehiculo",
+						"5ebd29e132ccf530ec1193f9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listado de locales",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"CBD1920\",\"password\":\"CBD1920\"\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/local",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"local"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creación de local",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\t\"propietario\": \"5ebd290e32ccf530ec1193f1\",\r\n        \"direccion\": \"Numero 45 de la calle Andalucia\",\r\n        \"numMaxVehiculo\": 6,\r\n        \"disponible\": true}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/local",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"local"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener local individual",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\t\"propietario\": \"5ebd290e32ccf530ec1193f1\",\r\n        \"direccion\": \"Numero 45 de la calle Andalucia\",\r\n        \"numMaxVehiculo\": 6,\r\n        \"disponible\": true}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/local/5ebd2bd832ccf530ec1193ff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"local",
+						"5ebd2bd832ccf530ec1193ff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar local",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\t\"propietario\": \"5ebd290e32ccf530ec1193f1\",\r\n        \"direccion\": \"Numero de la calle Rioja\",\r\n        \"numMaxVehiculo\": 3,\r\n        \"disponible\": false}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/local/5ebd2bd832ccf530ec1193ff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"local",
+						"5ebd2bd832ccf530ec1193ff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar local",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\t\"propietario\": \"5ebd290e32ccf530ec1193f1\",\r\n        \"direccion\": \"Numero 45 de la calle Andalucia\",\r\n        \"numMaxVehiculo\": 6,\r\n        \"disponible\": true}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/local/5ebd2bd832ccf530ec1193ff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"local",
+						"5ebd2bd832ccf530ec1193ff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listado de valoraciones",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"CBD1920\",\"password\":\"CBD1920\"\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/valoraciones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"valoraciones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valoración local por usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNCRDE5MjAiLCJjaGVjayI6dHJ1ZSwiaWF0IjoxNTg5NDk2MTA5LCJleHAiOjI1ODk0OTYxMDl9.R0DI2LBc5F_qvwTwpx4A9woKyNFVpLvNuIFjEDMFEDM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"valoracion\": 2,\r\n    \"local\": \"5ebd2bd832ccf530ec1193ff\",\r\n    \"usuario\":\"5ebd27b032ccf530ec1193eb\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/valoracion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"valoracion"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

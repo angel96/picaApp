@@ -1,0 +1,109 @@
+[{
+  "_id": {
+    "$oid": "5ebd2ca932ccf530ec119403"
+  },
+  "valoracion": 8,
+  "local": {
+    "$oid": "5ebd2bf332ccf530ec119400"
+  },
+  "usuario": {
+    "$oid": "5ebd27b032ccf530ec1193eb"
+  },
+  "createdAt": {
+    "$date": "2020-05-14T11:34:01.578Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:34:01.578Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd2cc532ccf530ec119404"
+  },
+  "valoracion": 7,
+  "local": {
+    "$oid": "5ebd2c2932ccf530ec119402"
+  },
+  "usuario": {
+    "$oid": "5ebd2c2932ccf530ec119402"
+  },
+  "createdAt": {
+    "$date": "2020-05-14T11:34:29.167Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:34:29.167Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd2cd932ccf530ec119405"
+  },
+  "valoracion": 9,
+  "local": {
+    "$oid": "5ebd2c2932ccf530ec119402"
+  },
+  "usuario": {
+    "$oid": "5ebd28ed32ccf530ec1193ef"
+  },
+  "createdAt": {
+    "$date": "2020-05-14T11:34:49.873Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:34:49.873Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd2cf032ccf530ec119406"
+  },
+  "valoracion": 3,
+  "local": {
+    "$oid": "5ebd2bf332ccf530ec119400"
+  },
+  "usuario": {
+    "$oid": "5ebd27b032ccf530ec1193eb"
+  },
+  "createdAt": {
+    "$date": "2020-05-14T11:35:12.973Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:35:12.973Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd2d0432ccf530ec119407"
+  },
+  "valoracion": 3,
+  "local": {
+    "$oid": "5ebd2c0e32ccf530ec119401"
+  },
+  "usuario": {
+    "$oid": "5ebd28bc32ccf530ec1193ed"
+  },
+  "createdAt": {
+    "$date": "2020-05-14T11:35:32.812Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:35:32.812Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd2d1d32ccf530ec119408"
+  },
+  "valoracion": 6,
+  "local": {
+    "$oid": "5ebd2c0e32ccf530ec119401"
+  },
+  "usuario": {
+    "$oid": "5ebd28ed32ccf530ec1193ef"
+  },
+  "createdAt": {
+    "$date": "2020-05-14T11:35:57.837Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:35:57.837Z"
+  },
+  "__v": 0
+}]

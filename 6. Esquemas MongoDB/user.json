@@ -1,0 +1,112 @@
+[{
+  "_id": {
+    "$oid": "5ebd27b032ccf530ec1193eb"
+  },
+  "__t": "UsuarioVehiculo",
+  "userAccount": {
+    "$oid": "5ebd27b032ccf530ec1193ea"
+  },
+  "name": "Usuario1",
+  "surnames": "surnames",
+  "location": "calle Cordoba, 17",
+  "creditCard": "548765897568",
+  "createdAt": {
+    "$date": "2020-05-14T11:12:48.829Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:12:48.829Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd28bc32ccf530ec1193ed"
+  },
+  "__t": "UsuarioVehiculo",
+  "userAccount": {
+    "$oid": "5ebd28bc32ccf530ec1193ec"
+  },
+  "name": "Usuario2",
+  "surnames": "luna",
+  "location": "calle Madrid, 4",
+  "creditCard": "548435568",
+  "createdAt": {
+    "$date": "2020-05-14T11:17:16.958Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:17:16.958Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd28ed32ccf530ec1193ef"
+  },
+  "__t": "UsuarioVehiculo",
+  "userAccount": {
+    "$oid": "5ebd28ed32ccf530ec1193ee"
+  },
+  "name": "Usuario3",
+  "surnames": "Nuñez",
+  "location": "calle Ala, 12",
+  "creditCard": "534534568",
+  "createdAt": {
+    "$date": "2020-05-14T11:18:05.438Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:18:05.438Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd290e32ccf530ec1193f1"
+  },
+  "__t": "UsuarioLocal",
+  "userAccount": {
+    "$oid": "5ebd290e32ccf530ec1193f0"
+  },
+  "name": "Usuario34",
+  "surnames": "Nuñez",
+  "location": "calle Guia, 12",
+  "createdAt": {
+    "$date": "2020-05-14T11:18:38.192Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:18:38.192Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd292532ccf530ec1193f3"
+  },
+  "__t": "UsuarioLocal",
+  "userAccount": {
+    "$oid": "5ebd292532ccf530ec1193f2"
+  },
+  "name": "Usuario5",
+  "surnames": "Nuñez",
+  "location": "calle Guia, 13",
+  "createdAt": {
+    "$date": "2020-05-14T11:19:01.672Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:19:01.672Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd294b32ccf530ec1193f5"
+  },
+  "__t": "UsuarioLocal",
+  "userAccount": {
+    "$oid": "5ebd294b32ccf530ec1193f4"
+  },
+  "name": "Usuario6",
+  "surnames": "García",
+  "location": "calle Alto, 2",
+  "createdAt": {
+    "$date": "2020-05-14T11:19:39.086Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:58:09.135Z"
+  },
+  "__v": 0
+}]

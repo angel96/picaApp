@@ -1,0 +1,79 @@
+[{
+  "_id": {
+    "$oid": "5ebd27b032ccf530ec1193ea"
+  },
+  "username": "Ezequiel",
+  "password": "123456",
+  "createdAt": {
+    "$date": "2020-05-14T11:12:48.822Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:12:48.822Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd28bc32ccf530ec1193ec"
+  },
+  "username": "Ángel",
+  "password": "123456",
+  "createdAt": {
+    "$date": "2020-05-14T11:17:16.956Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:17:16.956Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd28ed32ccf530ec1193ee"
+  },
+  "username": "María",
+  "password": "123456",
+  "createdAt": {
+    "$date": "2020-05-14T11:18:05.436Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:18:05.436Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd290e32ccf530ec1193f0"
+  },
+  "username": "Pedro",
+  "password": "123456",
+  "createdAt": {
+    "$date": "2020-05-14T11:18:38.188Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:18:38.188Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd292532ccf530ec1193f2"
+  },
+  "username": "Marta",
+  "password": "123456",
+  "createdAt": {
+    "$date": "2020-05-14T11:19:01.670Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:19:01.670Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd294b32ccf530ec1193f4"
+  },
+  "username": "Lucas",
+  "password": "123456",
+  "createdAt": {
+    "$date": "2020-05-14T11:19:39.084Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:58:09.138Z"
+  },
+  "__v": 0
+}]

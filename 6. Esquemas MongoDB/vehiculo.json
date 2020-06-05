@@ -1,0 +1,96 @@
+[{
+  "_id": {
+    "$oid": "5ebd2a9432ccf530ec1193fa"
+  },
+  "propietario": {
+    "$oid": "5ebd27b032ccf530ec1193eb"
+  },
+  "tipo": {
+    "$oid": "5ebd29b032ccf530ec1193f6"
+  },
+  "cargaMaxima": "54 w",
+  "matricula": "2548PH",
+  "createdAt": {
+    "$date": "2020-05-14T11:25:08.061Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:25:08.061Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd2ac532ccf530ec1193fb"
+  },
+  "propietario": {
+    "$oid": "5ebd28bc32ccf530ec1193ed"
+  },
+  "tipo": {
+    "$oid": "5ebd29c232ccf530ec1193f7"
+  },
+  "cargaMaxima": "15 w",
+  "matricula": "6666YM",
+  "createdAt": {
+    "$date": "2020-05-14T11:25:57.304Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:25:57.304Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd2ae632ccf530ec1193fc"
+  },
+  "propietario": {
+    "$oid": "5ebd28ed32ccf530ec1193ef"
+  },
+  "tipo": {
+    "$oid": "5ebd29d132ccf530ec1193f8"
+  },
+  "cargaMaxima": "7 w",
+  "matricula": "7658UM",
+  "createdAt": {
+    "$date": "2020-05-14T11:26:30.426Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:26:30.426Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd2b0632ccf530ec1193fd"
+  },
+  "propietario": {
+    "$oid": "5ebd27b032ccf530ec1193eb"
+  },
+  "tipo": {
+    "$oid": "5ebd29e132ccf530ec1193f9"
+  },
+  "cargaMaxima": "88w",
+  "matricula": "9898AA",
+  "createdAt": {
+    "$date": "2020-05-14T11:27:02.499Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:27:02.499Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ebd2b1f32ccf530ec1193fe"
+  },
+  "propietario": {
+    "$oid": "5ebd27b032ccf530ec1193eb"
+  },
+  "tipo": {
+    "$oid": "5ebd29b032ccf530ec1193f6"
+  },
+  "cargaMaxima": "150w",
+  "matricula": "9564BA",
+  "createdAt": {
+    "$date": "2020-05-14T11:27:27.950Z"
+  },
+  "updatedAt": {
+    "$date": "2020-05-14T11:28:03.676Z"
+  },
+  "__v": 0
+}]
